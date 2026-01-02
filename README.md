@@ -6,7 +6,7 @@
 # How to install
 
 ```ps
-dotnet add package TechAdvisor.AuditLogging.EntityFramework --version 8.0.0
+dotnet add package TechAdvisor.AuditLogging.EntityFramework --version 10.0.0
 ```
 
 # How to use it

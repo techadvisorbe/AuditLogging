@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <Version>2.0.0</Version>
+        <TargetFramework>net10.0</TargetFramework>
+        <Version>10.0.0</Version>
         <Description>Simple audit logging for .NET Core with EntityFramework Core support</Description>
         <PackageProjectUrl></PackageProjectUrl>
         <RepositoryUrl>https://github.com/techadvisorbe/AuditLogging</RepositoryUrl>
@@ -12,10 +12,22 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <Authors>Jan Škoruba, Abdelilah El mansouri</Authors> 
         <IsPackable>true</IsPackable>
+        <PackageOutputPath>$(SolutionDir)../nuget</PackageOutputPath>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageProjectUrl>https://github.com/techadvisorbe/AuditLogging</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageReleaseNotes>https://github.com/techadvisorbe/AuditLogging/releases</PackageReleaseNotes>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>$(SolutionDir)../key.snk</AssemblyOriginatorKeyFile>
+        <!-- Declare that the Repository URL can be published to NuSpec -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>portable</DebugType>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <IncludeBuildOutput>true</IncludeBuildOutput>
     </PropertyGroup>
-
-
 
 
     <ItemGroup>
@@ -23,8 +35,26 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="$(SolutionDir)../README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="$(SolutionDir)../icon.jpg">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="..\..\LICENSE">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
     </ItemGroup>
 
 </Project>
